@@ -74,14 +74,14 @@ git add .
 # Crear el primer commit
 git commit -m "Initial commit: Web rock español Juntas Sí Se Puede"
 
-# Agregar la rama (main o master según tu preferencia de GitHub)
-git branch -M main
+# El repositorio ya tiene la rama master por defecto
+# (Si quieres cambiarla a main: git branch -M main)
 
 # Agregar el repositorio remoto (reemplaza TU_USUARIO con tu username de GitHub)
 git remote add origin https://github.com/TU_USUARIO/juntas-si-se-puede.git
 
 # Subir el código a GitHub
-git push -u origin main
+git push -u origin master
 ```
 
 ### Paso 3: Verificar en GitHub
@@ -114,8 +114,22 @@ En la pantalla de configuración:
 
 - **Project name**: `juntas-si-se-puede` (o el nombre que prefieras)
 - **Framework preset**: Selecciona **None** (porque es contenido estático)
-- **Build command**: Deja vacío (no necesita compilación)
-- **Build output directory**: Deja vacío o escribe `.`
+- **Build command**: Déja **vacío** (no necesita compilación - es HTML puro)
+- **Deploy command**: Pon `echo "Ready to deploy"` o simplemente `true` (Cloudflare lo requiere pero no hace nada especial)
+- **Build output directory**: Deja **vacío** (o escribe `.`)
+
+**Explicación del Deploy command:**
+Como tu proyecto es solo archivos estáticos, el deploy command puede ser algo simple que simplemente confirme que todo está listo. Usa cualquiera de estas opciones:
+
+```
+echo "Ready to deploy"
+```
+o
+```
+true
+```
+
+Cloudflare ejecutará este comando antes del deploy, pero no hará nada especial porque tu sitio no necesita compilación ni procesos previos.
 
 Click en **Save and Deploy**
 
@@ -144,7 +158,7 @@ Cada vez que hagas cambios:
 # En la carpeta del proyecto
 git add .
 git commit -m "Descripción del cambio"
-git push origin main
+git push origin master
 ```
 
 Cloudflare Pages **automáticamente** construirá y desplegará los cambios. En 1-2 minutos tu web estará actualizada.
