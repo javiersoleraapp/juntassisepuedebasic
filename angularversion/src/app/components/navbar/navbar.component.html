@@ -1,0 +1,34 @@
+<header class="navbar">
+  <nav class="nav-container container">
+    <div class="nav-logo">
+      <a href="#" (click)="scrollToSection('home')" class="logo-text">
+        🎸 JUNTAS SÍ SE PUEDE 🎸
+      </a>
+    </div>
+
+    <!-- Menu Desktop -->
+    <ul class="nav-links hide-mobile">
+      <li><a (click)="scrollToSection('home')" class="nav-link">INICIO</a></li>
+      <li><a (click)="scrollToSection('about')" class="nav-link">QUIÉN SOY</a></li>
+      <li><a (click)="scrollToSection('gallery')" class="nav-link">GALERÍA</a></li>
+      <li><a (click)="scrollToSection('contact')" class="nav-link">CONTACTO</a></li>
+    </ul>
+
+    <!-- Menu Mobile -->
+    <button class="hamburger show-mobile" (click)="toggleMenu()" [class.active]="isMenuOpen()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" [class.open]="isMenuOpen()">
+      <ul class="mobile-nav-links">
+        <li><a (click)="scrollToSection('home')" class="mobile-nav-link">INICIO</a></li>
+        <li><a (click)="scrollToSection('about')" class="mobile-nav-link">QUIÉN SOY</a></li>
+        <li><a (click)="scrollToSection('gallery')" class="mobile-nav-link">GALERÍA</a></li>
+        <li><a (click)="scrollToSection('contact')" class="mobile-nav-link">CONTACTO</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>

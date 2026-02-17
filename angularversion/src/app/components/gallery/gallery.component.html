@@ -1,0 +1,26 @@
+<section id="gallery" class="gallery section">
+  <div class="container">
+    <h2 class="section-title">Galería</h2>
+
+    <div class="gallery-grid">
+      <div
+        class="gallery-item"
+        *ngFor="let item of galleryItems; let i = index"
+        [style.animation-delay]="i * 0.1 + 's'"
+      >
+        <div class="gallery-icon">{{ item.icon }}</div>
+        <div class="gallery-content">
+          <h3 class="gallery-title">{{ item.title }}</h3>
+          <p class="gallery-description">{{ item.description }}</p>
+        </div>
+        <div class="gallery-overlay"></div>
+      </div>
+    </div>
+
+    <!-- Placeholder para imágenes futuras -->
+    <div class="coming-soon">
+      <p>🎬 Galería multimedia en construcción</p>
+      <p>Próximamente: Fotos, videos y más contenido exclusivo</p>
+    </div>
+  </div>
+</section>

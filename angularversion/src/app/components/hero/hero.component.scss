@@ -1,0 +1,256 @@
+/* ==================== HERO SECTION ==================== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #FFFFFF 0%, #F5F5F5 50%, #F8F9FA 100%);
+  background-attachment: fixed;
+
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+  }
+}
+
+/* ==================== PARTICLES ==================== */
+.hero-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background-color: var(--primary-red);
+  border-radius: 50%;
+  opacity: 0.15;
+
+  &:nth-child(1) {
+    top: 10%;
+    left: 14%;
+    animation: float 15s infinite ease-in-out 0.5s;
+  }
+  &:nth-child(2) {
+    top: 20%;
+    left: 23%;
+    animation: float 15s infinite ease-in-out 1s;
+  }
+  &:nth-child(3) {
+    top: 30%;
+    left: 32%;
+    animation: float 15s infinite ease-in-out 1.5s;
+  }
+  &:nth-child(4) {
+    top: 40%;
+    left: 41%;
+    animation: float 15s infinite ease-in-out 2s;
+  }
+  &:nth-child(5) {
+    top: 50%;
+    left: 50%;
+    animation: float 15s infinite ease-in-out 2.5s;
+  }
+  &:nth-child(6) {
+    top: 60%;
+    left: 59%;
+    animation: float 15s infinite ease-in-out 3s;
+  }
+  &:nth-child(7) {
+    top: 70%;
+    left: 68%;
+    animation: float 15s infinite ease-in-out 3.5s;
+  }
+  &:nth-child(8) {
+    top: 80%;
+    left: 77%;
+    animation: float 15s infinite ease-in-out 4s;
+  }
+  &:nth-child(9) {
+    top: 90%;
+    left: 86%;
+    animation: float 15s infinite ease-in-out 4.5s;
+  }
+  &:nth-child(10) {
+    top: 100%;
+    left: 95%;
+    animation: float 15s infinite ease-in-out 5s;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-30px) translateX(30px);
+    opacity: 0.8;
+  }
+}
+
+/* ==================== HERO CONTENT ==================== */
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  justify-items: center;
+  max-width: 1200px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.hero-text {
+  text-align: left;
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--primary-red);
+  text-shadow: none;
+  margin-bottom: 1rem;
+  animation: fadeInUp 0.8s ease-out;
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+
+  .accent {
+    color: var(--primary-cyan);
+    text-shadow: none;
+    font-style: italic;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  color: var(--text-gray);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  max-width: 500px;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+}
+
+/* ==================== HERO GRAPHIC ==================== */
+.hero-graphic {
+  width: 100%;
+  max-width: 400px;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+
+  svg {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 2px 16px rgba(0, 0, 0, 0.1));
+  }
+
+  .guitar-group {
+    animation: swing 4s ease-in-out infinite;
+  }
+
+  .mic-group {
+    animation: pulse 3s ease-in-out infinite;
+  }
+
+  .notes {
+    animation: float 5s ease-in-out infinite;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 300px;
+  }
+}
+
+@keyframes swing {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* ==================== SCROLL INDICATOR ==================== */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary-cyan);
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  animation: bounce 2s ease-in-out infinite;
+
+  .arrow {
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
