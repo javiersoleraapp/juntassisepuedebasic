@@ -1,6 +1,6 @@
 name = "juntas-pages"
 
-pages_build_output_dir = "./angularversion/dist/juntas-app"
+pages_build_output_dir = "/"
 
 [env.production]
 compatibility_date = "2024-01-01"
